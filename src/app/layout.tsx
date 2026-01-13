@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Jost } from "next/font/google";
+import { Jost, Merriweather } from "next/font/google";
 import { Header } from "@/components/layout/Header";
 import "./globals.css";
 
@@ -8,14 +8,17 @@ const jost = Jost({
   subsets: ["latin"],
 });
 
-
+const merriweather = Merriweather({
+  variable: "--font-merriweather",
+  subsets: ["latin"],
+  weight: ["300", "400", "700", "900"],
+});
 
 export const metadata: Metadata = {
   title: {
     default: "Try",
     template: "%s · Try",
-  },
-  description: "A Next.js + Tailwind app bootstrapped with Bun.",
+  }
 };
 
 export default function RootLayout({
