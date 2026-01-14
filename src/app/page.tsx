@@ -10,15 +10,23 @@ export default function HomePage() {
       <div className="flex flex-col items-center w-full gap-20">
 
         {/* Hero Section */}
-        <div className="flex flex-col justify-center items-center w-full px-35 mt-20 gap-20">
-        <div className="flex flex-col w-full min-h-128 gap-y-40 items-end justify-center bg-contain bg-center bg-no-repeat md:px-35" 
-        style={{backgroundImage: "url('/home/images/HeroBackground.png')"}} >
-          <div className="rounded-full bg-white h-20 w-20"> </div>
-          <div className="ml-auto w-full max-w-4xl text-right flex flex-col gap-y-2 pb-10">
-          <h1 className="font-sans text-5xl font-semibold text-white">IT IS DIFFICULT ENOUGH TO LOSE A HOME TO FORECLOSURE.</h1>
-          <p className="font-sans text-4xl font-light tracking-tight text-white">You should not also lose your home equity</p>
-        </div>
-        </div>
+        <div className="w-full mt-20">
+          <div
+            className="flex w-full min-h-128 bg-contain bg-center bg-no-repeat"
+            style={{ backgroundImage: "url('/home/images/HeroBackground.png')" }}
+          >
+            <div className="mx-auto flex w-full max-w-7xl flex-col items-end justify-center gap-y-40">
+              <div className="rounded-full bg-white h-20 w-20"> </div>
+              <div className="w-full max-w-4xl text-right flex flex-col gap-y-2 pb-10">
+                <h1 className="font-sans text-5xl font-semibold text-white">
+                  IT IS DIFFICULT ENOUGH TO LOSE A HOME TO FORECLOSURE.
+                </h1>
+                <p className="font-sans text-4xl font-light tracking-tight text-white">
+                  You should not also lose your home equity
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Banner Section */}
