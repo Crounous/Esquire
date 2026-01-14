@@ -106,7 +106,7 @@ export function BottomSection({
 
                 <Link
                   href={requestHref}
-                  className="inline-flex h-14 w-45.5 items-center justify-center rounded-[70.813px] bg-white px-5.25 py-4 font-sans text-[19.5px] font-bold leading-[0.7024] tracking-[-0.78px] text-[#143B2E] uppercase"
+                  className="inline-flex h-14 w-45.5 items-center justify-center rounded-[70.813px] bg-white px-5.25 py-4 font-sans text-[19.5px] font-bold leading-[0.7024] tracking-[-0.78px] text-[#143B2E] uppercase transition-opacity hover:opacity-80"
                 >
                   Request Here
                 </Link>
