@@ -25,8 +25,8 @@ export function VideoSection({
       className={cx("flex w-full flex-col items-center gap-y-10", className)}
     >
       <div className="w-full flex flex-col gap-y-1 tracking-tight items-center">
-        <h2 className="font-merriweather text-6xl font-bold text-center">{title}</h2>
-        <h2 className="font-merriweather text-6xl font-bold text-center">{subtitle}</h2>
+        <h2 className="font-merriweather text-3xl sm:text-5xl lg:text-6xl font-bold text-center">{title}</h2>
+        <h2 className="font-merriweather text-3xl sm:text-5xl lg:text-6xl font-bold text-center">{subtitle}</h2>
       </div>
 
       <div className="w-full max-w-7xl">
