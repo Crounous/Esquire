@@ -20,7 +20,10 @@ export const metadata: Metadata = {
     template: "%s · Esquire",
   },
   icons: {
-    icon: "/favicon.svg",
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
   },
 };
 
