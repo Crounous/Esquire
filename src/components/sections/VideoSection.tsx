@@ -3,7 +3,7 @@ import type { HTMLAttributes } from "react";
 type VideoSectionProps = HTMLAttributes<HTMLElement> & {
   title?: string;
   subtitle?: string;
-    src?: string;
+  src?: string;
   poster?: string;
 };
 
@@ -30,9 +30,10 @@ export function VideoSection({
       </div>
 
       <div className="w-full max-w-7xl">
+        <div className="w-full aspect-video rounded-4xl overflow-hidden bg-black">
         {src ? (
           <video
-            className="w-full aspect-video rounded-4xl overflow-hidden bg-black"
+            className="h-full w-full object-cover"
             src={src}
             poster={poster}
             controls
@@ -46,6 +47,7 @@ export function VideoSection({
             </p>
           </div>
         )}
+        </div>
       </div>
     </section>
   );

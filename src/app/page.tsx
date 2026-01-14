@@ -52,7 +52,10 @@ export default function HomePage() {
           />
         </div>
 
-        <VideoSection className="px-35" />
+        <VideoSection
+          className="px-35"
+          src="/home/videos/video.mp4"
+        />
 
         {/* Cards Section */}
         <div className="w-full px-6">
