@@ -7,7 +7,7 @@ type HeaderButtonProps = Omit<ComponentProps<typeof Link>, "className" | "childr
 
 export function HeaderButton({ children, ...props }: HeaderButtonProps) {
   const className =
-    "font-sans inline-flex h-9 items-center justify-center rounded-full px-4 text-sm font-bold text-black transition-colors hover:text-gray-700";
+    "font-sans inline-flex h-9 items-center justify-center rounded-full px-4 text-lg font-bold text-black transition-colors hover:text-gray-700";
 
   return (
     <Link {...props} className={className}>
