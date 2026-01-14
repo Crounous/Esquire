@@ -29,16 +29,24 @@ function InfoCard({
   description: string;
 }) {
   return (
-    <div className="flex h-66.25 w-75 flex-col items-center justify-center gap-3.75 rounded-[40px] bg-white p-6.25">
-      <img src={iconSrc} alt="" className="h-16.25 w-16.25" />
-      <p className="w-full font-sans text-[22px] font-medium leading-[1.462] tracking-[-0.88px] text-center text-[#143B2E]">
+    <div className="group flex h-66.25 w-75 flex-col items-center gap-3.75 rounded-[40px] border-2 border-transparent bg-white p-6.25 transition-[transform,box-shadow,background-color,border-color] duration-200 ease-out hover:scale-[1.03] hover:border-white hover:bg-[#143B2E] hover:shadow-[0_0_22px_rgba(255,255,255,0.28)]">
+      <img
+        src={iconSrc}
+        alt=""
+        className="h-16.25 w-16.25 transition-[filter] duration-200 ease-out group-hover:brightness-0 group-hover:invert"
+      />
+      <p className="w-full font-sans text-[22px] font-medium leading-[1.462] tracking-[-0.88px] text-center text-[#143B2E] transition-colors duration-200 ease-out group-hover:text-white">
         {title}
       </p>
-      <p className="w-full font-sans text-[20px] font-normal leading-[1.1] tracking-[-0.8px] text-center text-[#143B2E]">
+      <p className="w-full font-sans text-[20px] font-normal leading-[1.1] tracking-[-0.8px] text-center text-[#143B2E] transition-colors duration-200 ease-out group-hover:text-white">
         {description}
       </p>
-      <div className="relative h-0 w-[41.5px]">
-        <img src={dividerLine} alt="" className="absolute inset-0 h-0.75 w-full" />
+      <div className="relative mt-auto h-0 w-[41.5px]">
+        <img
+          src={dividerLine}
+          alt=""
+          className="absolute inset-0 h-0.75 w-full transition-[filter] duration-200 ease-out group-hover:brightness-0 group-hover:invert"
+        />
       </div>
     </div>
   );
@@ -106,7 +114,7 @@ export function BottomSection({
 
                 <Link
                   href={requestHref}
-                  className="inline-flex h-14 w-45.5 items-center justify-center rounded-[70.813px] bg-white px-5.25 py-4 font-sans text-[19.5px] font-bold leading-[0.7024] tracking-[-0.78px] text-[#143B2E] uppercase transition-opacity hover:opacity-80"
+                  className="inline-flex h-14 w-50 items-center justify-center rounded-[70.813px] border-2 border-transparent bg-white px-5.25 py-4 font-sans text-[19.5px] font-bold leading-[0.7024] tracking-[-0.78px] text-[#143B2E] uppercase transition-[transform,box-shadow,background-color,border-color,color] duration-200 ease-out hover:bg-[#143B2E] hover:text-white hover:border-white"
                 >
                   Request Here
                 </Link>
