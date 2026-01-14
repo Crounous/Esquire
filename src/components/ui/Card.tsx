@@ -37,20 +37,22 @@ export function Card({
   const hasImageSection = isGold && Boolean(imageSrc);
 
   const container = cx(
-    "relative overflow-hidden rounded-[21.132px]",
+    "relative flex flex-col overflow-hidden rounded-[21.132px]",
     isGold ? "bg-[#D8B461]" : "bg-[#143B2E]",
-    size === "lg" ? "w-[480px] h-[370px]" : "w-[350px] h-[370px]",
+    size === "lg"
+      ? "w-full min-h-[370px] lg:w-[480px] lg:h-[370px]"
+      : "w-full min-h-[370px] lg:w-[350px] lg:h-[370px]",
     className,
   );
 
   const titleClass = cx(
-    "font-sans font-semibold uppercase text-[25.36px] leading-[1.015] tracking-[-0.04em] min-h-[55px]",
+    "font-sans font-semibold uppercase text-[20px] sm:text-[25.36px] leading-[1.015] tracking-[-0.04em] min-h-[44px] sm:min-h-[55px]",
     isGold ? "text-[#143B2E]" : "text-[#D8B461]",
     size === "lg" ? "max-w-[430px]" : "max-w-[300px]",
   );
 
   const bodyClass = cx(
-    "font-sans font-light text-[15.85px] leading-[1.35] text-justify",
+    "font-sans font-light text-[14px] sm:text-[15.85px] leading-[1.35] text-justify",
     "text-white",
   );
 
@@ -72,9 +74,9 @@ export function Card({
   return (
     <section className={container}>
       {hasImageSection ? (
-        <div className="flex h-full flex-col">
+        <div className="flex flex-1 flex-col">
           {/* Top text section (padded) */}
-          <div className="px-6.25 pt-6.25">
+          <div className="px-4 pt-4 pb-[1lh] lg:pb-0 sm:px-6.25 sm:pt-6.25">
             <div className="flex flex-col gap-5">
               <h3 className={titleClass}>{title}</h3>
               <div className={bodyClass}>{children}</div>
@@ -82,7 +84,7 @@ export function Card({
           </div>
 
           {/* Bottom image section (full-bleed within the card) */}
-          <div className="relative mt-auto h-37.5 w-full rounded-bl-[21.132px] rounded-br-[21.132px]">
+          <div className="relative mt-auto flex-1 min-h-28 lg:flex-none lg:h-37.5 w-full rounded-bl-[21.132px] rounded-br-[21.132px]">
             <img
               src={imageSrc}
               alt={imageAlt}
@@ -90,7 +92,7 @@ export function Card({
             />
 
             {href ? (
-              <div className="absolute inset-0 flex items-end justify-end p-6.25">
+              <div className="absolute inset-0 flex items-end justify-end p-4 sm:p-6.25">
                 <LearnMoreButton href={href} variant="ghost" ghostColor="white">
                   {learnMoreLabel}
                 </LearnMoreButton>
@@ -99,7 +101,7 @@ export function Card({
           </div>
         </div>
       ) : (
-        <div className="flex h-full flex-col p-6.25">
+        <div className="flex flex-1 flex-col p-4 sm:p-6.25">
           <div className="flex flex-col gap-5">
             <h3 className={titleClass}>{title}</h3>
             <div className={bodyClass}>{children}</div>

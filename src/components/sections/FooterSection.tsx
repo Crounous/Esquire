@@ -15,8 +15,8 @@ export function FooterSection({
 }: FooterSectionProps) {
   return (
     <footer {...props} className={cx("relative w-full shrink-0", className)}>
-      <div className="relative z-20 h-23 w-full bg-[#D8B461]" />
-      <p className="absolute inset-x-0 top-8.5 z-30 text-center font-sans text-[24px] font-medium leading-[0.75855]  text-white">
+      <div className="relative z-20 h-16 sm:h-23 w-full bg-[#D8B461]" />
+      <p className="absolute inset-x-0 top-6 sm:top-8.5 z-30 text-center font-sans text-base sm:text-[24px] font-medium leading-[0.75855] text-white px-4">
         © {year} Esquire Asset Recovery, LLC. All rights reserved.
       </p>
     </footer>

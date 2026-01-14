@@ -9,21 +9,21 @@ import { Reveal } from "@/components/ui/Reveal";
 export default function HomePage() {
   return (
     <main className="flex min-h-screen flex-col bg-background text-foreground">
-      <div className="flex flex-col items-center w-full gap-20">
+      <div className="flex w-full flex-col items-center gap-12 md:gap-20">
 
-        <Reveal className="w-full mt-20" delayMs={100}>
+        <Reveal className="w-full mt-10 md:mt-20" delayMs={100}>
           {/* Hero Section */}
           <div
-            className="flex w-full min-h-128 bg-contain bg-center bg-no-repeat"
+            className="flex w-full min-h-105 sm:min-h-128 bg-cover lg:bg-contain bg-center bg-no-repeat overflow-hidden"
             style={{ backgroundImage: "url('/home/images/HeroBackground.png')" }}
           >
-            <div className="mx-auto flex w-full max-w-7xl flex-col items-end justify-center gap-y-40">
-              <div className="rounded-full bg-white h-20 w-20"> </div>
-              <div className="w-full max-w-4xl text-right flex flex-col gap-y-2 pb-10">
-                <h1 className="font-sans text-5xl font-semibold text-white">
+            <div className="mx-auto flex w-full max-w-7xl flex-col items-center lg:items-end justify-center gap-y-16 sm:gap-y-40 px-4 sm:px-6">
+              <div className="rounded-full bg-white size-[clamp(44px,9vw,80px)]" />
+              <div className="w-full max-w-4xl text-center lg:text-right flex flex-col gap-y-2 pb-10">
+                <h1 className="font-sans text-[clamp(22px,4.2vw,48px)] font-semibold leading-[1.1] text-white">
                   IT IS DIFFICULT ENOUGH TO LOSE A HOME TO FORECLOSURE.
                 </h1>
-                <p className="font-sans text-4xl font-light tracking-tight text-white">
+                <p className="font-sans text-[clamp(16px,3.2vw,36px)] font-light tracking-tight leading-[1.15] text-white">
                   You should not also lose your home equity
                 </p>
               </div>
@@ -33,41 +33,41 @@ export default function HomePage() {
 
         <Reveal className="w-full" delayMs={200}>
           {/* Banner Section */}
-          <div className="relative w-full h-90 overflow-hidden bg-[#143B2E]">
-            <div className="relative z-2 left-0 top-0 h-full w-full px-35 flex items-center p-10">
+          <div className="relative w-full overflow-hidden bg-[#143B2E] py-10 lg:h-90 lg:py-0">
+            <div className="relative z-2 left-0 top-0 w-full px-4 sm:px-6 lg:px-35 flex flex-col gap-8 lg:h-full lg:flex-row lg:items-center lg:py-10">
               <div className="flex flex-col gap-y-4">
-                <h2 className="font-merriweather text-4xl font-semibold text-white">ESQUIRE ASSET RECOVERY, LLC</h2>
-                <p className="font-sans text-xl font-light text-white max-w-3xl">
+                <h2 className="font-merriweather text-2xl sm:text-3xl lg:text-4xl font-semibold text-white">ESQUIRE ASSET RECOVERY, LLC</h2>
+                <p className="font-sans text-base sm:text-lg lg:text-xl font-light text-white max-w-3xl">
                   The nation's most trusted and experienced attorney owned firm that specializes in helping people 
                   recover money legally owed to them after a foreclosure. Our team of attorneys and investigators 
                   specialize in cases just like yours. We have helped many others in your situation reclaim money 
                   they didn't even know they were owed.
                 </p>
               </div>
-              <div className="flex-1 self-end flex justify-end">
+              <div className="flex-1 self-start lg:self-end flex justify-start lg:justify-end">
                 <LearnMoreButton href="/"></LearnMoreButton>
               </div>
             </div>
             <img src="/home/images/BannerLogo.png"
               alt="Banner Logo"
-              className="absolute z-0 inset-y-0 right-0 h-full w-auto object-contain object-center opacity-60 pointer-events-none"
+              className="hidden sm:block absolute z-0 inset-y-0 right-0 h-full w-auto object-contain object-center opacity-60 pointer-events-none"
             />
           </div>
         </Reveal>
 
         <Reveal className="w-full" delayMs={120}>
           <VideoSection
-            className="px-35"
+            className="px-4 sm:px-6 lg:px-35"
             src="/home/videos/video.mp4"
           />
         </Reveal>
 
         <Reveal className="w-full" delayMs={120}>
           {/* Cards Section */}
-          <div className="w-full px-6">
+          <div className="w-full px-4 sm:px-6">
             <div className="mx-auto flex w-full max-w-400 flex-col items-center gap-6.25">
             {/* Top Cards */}
-            <div className="flex w-full flex-wrap items-start justify-center gap-6.25">
+            <div className="flex w-full flex-col items-stretch gap-6.25 lg:flex-row lg:flex-wrap lg:items-start lg:justify-center">
               <Card
                 title="Understanding Surplus Funds"
                 variant="green"
@@ -110,7 +110,7 @@ export default function HomePage() {
             </div>
 
             {/* Bottom Cards */}
-            <div className="flex w-full flex-wrap items-start justify-center gap-6.25">
+            <div className="flex w-full flex-col items-stretch gap-6.25 lg:flex-row lg:flex-wrap lg:items-start lg:justify-center">
               <Card
                 title="Your Dedicated Advocate"
                 variant="green"
@@ -162,7 +162,7 @@ export default function HomePage() {
 
         <Reveal className="w-full" delayMs={120}>
           <div className="relative w-full overflow-x-clip">
-            <div className="relative z-10 mb-25">
+            <div className="relative z-10 mb-16 sm:mb-25">
               <BottomSection requestHref="/" />
             </div>
 
@@ -171,7 +171,7 @@ export default function HomePage() {
                 <img
                   src="/home/images/woman.png"
                   alt=""
-                  className="absolute bottom-0 right-[clamp(-80px,-8vw,-50px)] h-[clamp(520px,55vw,705px)] w-auto max-w-none"
+                  className="hidden lg:block absolute bottom-0 -right-5 sm:right-[clamp(-80px,-8vw,-50px)] h-105 sm:h-[clamp(520px,55vw,705px)] w-auto max-w-none"
                 />
               </div>
             </div>
