@@ -3,6 +3,7 @@ import { LearnMoreButton } from "@/components/ui/LearnMoreButton";
 import { BottomSection } from "@/components/sections/BottomSection";
 import { DividerSection } from "@/components/sections/DividerSection";
 import { FooterSection } from "@/components/sections/FooterSection";
+import { VideoSection } from "@/components/sections/VideoSection";
 
 export default function HomePage() {
   return (
@@ -51,14 +52,7 @@ export default function HomePage() {
           />
         </div>
 
-        {/* Video Section */}
-        <div className="flex flex-col items-center w-full gap-y-10 px-35">
-          <div className="w-full flex flex-col gap-y-1 tracking-tight items-center">
-          <h2 className="font-merriweather text-6xl font-bold text-center">We Fight Home Equity Theft</h2>
-          <h2 className="font-merriweather text-6xl font-bold text-center">Your Fight is Our Fight</h2>
-          </div>
-          <div className="w-full max-w-7xl aspect-video bg-black rounded-4xl overflow-hidden"> </div>
-        </div>
+        <VideoSection className="px-35" />
 
         {/* Cards Section */}
         <div className="w-full px-6">
