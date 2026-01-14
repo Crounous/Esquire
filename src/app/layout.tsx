@@ -16,9 +16,12 @@ const merriweather = Merriweather({
 
 export const metadata: Metadata = {
   title: {
-    default: "Try",
-    template: "%s · Try",
-  }
+    default: "Esquire",
+    template: "%s · Esquire",
+  },
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({
