@@ -79,12 +79,12 @@ export function RequestFormModal({ isOpen, onClose }: RequestFormModalProps) {
         <button
           type="button"
           onClick={onClose}
-          className="group absolute right-4 top-4 inline-flex h-9 w-9 items-center justify-center rounded-full text-[#143B2E]"
+          className="group absolute right-4 top-4 inline-flex h-9 w-9 items-center justify-center rounded-full text-[#2E5B3A]"
           aria-label="Close"
         >
           <svg
             viewBox="0 0 24 24"
-            className="h-5 w-5 text-[#143B2E] transition-[stroke-width]"
+            className="h-5 w-5 text-[#2E5B3A] transition-[stroke-width]"
             fill="none"
             stroke="currentColor"
             strokeWidth="2"
@@ -98,10 +98,10 @@ export function RequestFormModal({ isOpen, onClose }: RequestFormModalProps) {
           </svg>
         </button>
 
-        <h3 className="text-center font-sans text-2xl font-semibold leading-7 text-[#143B2E] sm:text-3xl">
-          "Yes, I Want My
+        <h3 className="text-center font-sans text-2xl font-semibold leading-7 text-[#2E5B3A] sm:text-3xl">
+          Yes, I Want My
           <br />
-          Surplus Refund Check"
+          Surplus Refund Check
         </h3>
 
         <form className="mt-8 flex flex-col gap-5" onSubmit={handleSubmit}>
@@ -112,7 +112,7 @@ export function RequestFormModal({ isOpen, onClose }: RequestFormModalProps) {
             <input
               type="text"
               placeholder="First Name"
-              className="h-11 w-full rounded-2xl border border-black/20 px-4 font-sans text-sm outline-none transition-colors focus:border-[#143B2E]"
+              className="h-11 w-full rounded-2xl border border-black/20 px-4 font-sans text-sm outline-none transition-colors focus:border-2 focus:border-[#2E5B3A]"
             />
           </div>
 
@@ -123,7 +123,7 @@ export function RequestFormModal({ isOpen, onClose }: RequestFormModalProps) {
             <input
               type="text"
               placeholder="Last Name"
-              className="h-11 w-full rounded-2xl border border-black/20 px-4 font-sans text-sm outline-none transition-colors focus:border-[#143B2E]"
+              className="h-11 w-full rounded-2xl border border-black/20 px-4 font-sans text-sm outline-none transition-colors focus:border-2 focus:border-[#2E5B3A]"
             />
           </div>
 
@@ -135,7 +135,7 @@ export function RequestFormModal({ isOpen, onClose }: RequestFormModalProps) {
               type="tel"
               placeholder="Phone"
               required
-              className="h-11 w-full rounded-2xl border border-black/20 px-4 font-sans text-sm outline-none transition-colors focus:border-[#143B2E]"
+              className="h-11 w-full rounded-2xl border border-black/20 px-4 font-sans text-sm outline-none transition-colors focus:border-2 focus:border-[#2E5B3A]"
             />
           </div>
 
@@ -147,7 +147,7 @@ export function RequestFormModal({ isOpen, onClose }: RequestFormModalProps) {
               type="email"
               placeholder="Email"
               required
-              className="h-11 w-full rounded-2xl border border-black/20 px-4 font-sans text-sm outline-none transition-colors focus:border-[#143B2E]"
+              className="h-11 w-full rounded-2xl border border-black/20 px-4 font-sans text-sm outline-none transition-colors focus:border-2 focus:border-[#2E5B3A]"
             />
           </div>
 
@@ -162,7 +162,7 @@ export function RequestFormModal({ isOpen, onClose }: RequestFormModalProps) {
 
           <button
             type="submit"
-            className="mt-4 h-11 w-md self-center rounded-full bg-[#2E5B3A] font-sans text-sm font-semibold uppercase tracking-wide text-white transition-colors hover:bg-[#244A30]"
+              className="mt-4 h-11 w-md self-center rounded-full bg-[#2E5B3A] font-sans text-sm font-semibold uppercase tracking-wide text-white transition-colors hover:bg-[#244A30]"
           >
             Please Expedite My Refund Check
           </button>
