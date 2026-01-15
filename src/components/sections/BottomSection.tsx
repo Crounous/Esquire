@@ -1,5 +1,8 @@
-import Link from "next/link";
+"use client";
+
+import { useState } from "react";
 import type { HTMLAttributes } from "react";
+import { RequestFormModal } from "@/components/ui/RequestFormModal";
 
 type BottomSectionProps = HTMLAttributes<HTMLElement> & {
   requestHref?: string;
@@ -29,23 +32,23 @@ function InfoCard({
   description: string;
 }) {
   return (
-    <div className="group flex w-full max-w-none flex-col items-center gap-3.75 rounded-[40px] border-2 border-transparent bg-white p-5 lg:h-66.25 lg:w-75 lg:max-w-none lg:p-6.25 transition-[transform,box-shadow,background-color,border-color] duration-200 ease-out hover:scale-[1.03] hover:border-white hover:bg-[#143B2E] hover:shadow-[0_0_22px_rgba(255,255,255,0.28)]">
+    <div className="flex w-full max-w-none flex-col items-center gap-3.75 rounded-[40px] border-2 border-transparent bg-white p-5 lg:h-66.25 lg:w-75 lg:max-w-none lg:p-6.25">
       <img
         src={iconSrc}
         alt=""
-        className="h-16.25 w-16.25 transition-[filter] duration-200 ease-out group-hover:brightness-0 group-hover:invert"
+        className="h-16.25 w-16.25"
       />
-      <p className="w-full font-sans text-[18px] sm:text-[22px] font-medium leading-[1.462] tracking-[-0.88px] text-center text-[#143B2E] transition-colors duration-200 ease-out group-hover:text-white">
+      <p className="w-full font-sans text-[16px] sm:text-[20px] font-medium leading-[1.462] tracking-[-0.88px] text-center text-[#143B2E]">
         {title}
       </p>
-      <p className="w-full font-sans text-[16px] sm:text-[20px] font-normal leading-[1.1] tracking-[-0.8px] text-center text-[#143B2E] transition-colors duration-200 ease-out group-hover:text-white">
+      <p className="w-full font-sans text-[14px] sm:text-[18px] font-normal leading-[1.1] tracking-[-0.8px] text-center text-[#143B2E]">
         {description}
       </p>
       <div className="relative mt-auto h-0 w-[41.5px]">
         <img
           src={dividerLine}
           alt=""
-          className="absolute inset-0 h-0.75 w-full transition-[filter] duration-200 ease-out group-hover:brightness-0 group-hover:invert"
+          className="absolute inset-0 h-0.75 w-full"
         />
       </div>
     </div>
@@ -57,11 +60,13 @@ export function BottomSection({
   requestHref = "/",
   ...props
 }: BottomSectionProps) {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <section {...props} className={cx("relative w-full", className)}>
       {/* Main card */}
-      <div className="relative mx-auto w-full max-w-322.25 rounded-[40px] px-0 pt-0">
-        <div className="relative w-full overflow-hidden rounded-[40px] lg:h-212.25">
+      <div className="relative mx-auto w-full max-w-280 rounded-[40px] px-0 pt-0">
+        <div className="relative w-full overflow-hidden rounded-[40px] lg:h-200.25">
           <div aria-hidden="true" className="absolute inset-0 pointer-events-none">
             <img
               src={bottomCardImage}
@@ -74,7 +79,7 @@ export function BottomSection({
           <div className="relative z-10 flex flex-col px-6 sm:px-12 lg:px-32.5 py-10 lg:py-12.5 lg:h-full">
             {/* Top section */}
             <div className="flex flex-col items-center gap-12.5">
-              <h2 className="font-sans text-3xl sm:text-4xl lg:text-[48px] font-semibold leading-[1.015] tracking-[-1.92px] text-center text-white">
+              <h2 className="font-sans text-2xl sm:text-3xl lg:text-[42px] font-semibold leading-[1.015] tracking-[-1.92px] text-center text-white">
                 <span className="capitalize">Maximize Your Money: </span>
                 <br />
                 <span className="capitalize">Smart Tips For Surplus Funds</span>
@@ -103,27 +108,30 @@ export function BottomSection({
             <div className="mt-12 lg:mt-auto flex w-full flex-col items-start justify-between gap-10 lg:flex-row lg:items-end">
               <div className="flex w-full max-w-none lg:max-w-187 flex-col gap-8.75">
                 <div className="text-white">
-                  <h3 className="font-sans text-3xl sm:text-5xl lg:text-[65.323px] font-semibold leading-[1.08] tracking-[-2.6129px] capitalize">
+                  <h3 className="font-sans text-xl sm:text-4xl lg:text-[56px] font-semibold leading-[1.08] tracking-[-2.6129px] capitalize">
                     Submit a Request to Claim a Surplus Refund
                   </h3>
-                  <p className="mt-4 font-sans text-base sm:text-[20px] font-normal leading-[1.24] tracking-[-0.8px]">
+                  <p className="mt-4 font-sans text-sm sm:text-[18px] font-normal leading-[1.24] tracking-[-0.8px]">
                     Once submitted, our team will review your request and reach out if additional information
                     is needed.
                   </p>
                 </div>
 
-                <Link
-                  href={requestHref}
-                  className="inline-flex h-14 w-full lg:w-50 items-center justify-center rounded-[70.813px] border-2 border-transparent bg-white px-5.25 py-4 font-sans text-[19.5px] font-bold leading-[0.7024] tracking-[-0.78px] text-[#143B2E] uppercase transition-[transform,box-shadow,background-color,border-color,color] duration-200 ease-out hover:bg-[#143B2E] hover:text-white hover:border-white"
+                <button
+                  type="button"
+                  onClick={() => setIsModalOpen(true)}
+                  className="inline-flex h-14 w-full lg:w-50 items-center justify-center rounded-[70.813px] border-2 border-transparent bg-white px-5.25 py-4 font-sans text-[18px] font-bold leading-[0.7024] tracking-[-0.78px] text-[#143B2E] uppercase transition-[transform,box-shadow,background-color,border-color,color] duration-200 ease-out hover:bg-[#143B2E] hover:text-white hover:border-white"
                 >
                   Request Here
-                </Link>
+                </button>
               </div>
               <div className="hidden w-105 lg:block" />
             </div>
           </div>
         </div>
       </div>
+
+      <RequestFormModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </section>
   );
 }

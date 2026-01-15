@@ -13,6 +13,8 @@ type LearnMoreButtonProps = Omit<
   variant?: LearnMoreVariant;
   /** Only applies when variant="ghost" */
   ghostColor?: GhostColor;
+  iconSizeClass?: string;
+  iconOffsetClass?: string;
 };
 
 function cx(...values: Array<string | undefined | null | false>) {
@@ -27,7 +29,7 @@ function ArrowIcon({ className }: { className?: string }) {
       viewBox="0 0 26 26"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={cx("h-6 w-6", className)}
+      className={cx(className)}
       aria-hidden="true"
       focusable="false"
     >
@@ -54,6 +56,8 @@ export function LearnMoreButton({
   children = "Learn More",
   variant = "filled",
   ghostColor = "white",
+  iconSizeClass = "h-4 w-4",
+  iconOffsetClass = "-translate-y-0.5",
   ...props
 }: LearnMoreButtonProps) {
   const base =
@@ -74,7 +78,7 @@ export function LearnMoreButton({
       {...props}
       className={cx(base, variant === "filled" ? filled : ghost, className)}
     >
-      <ArrowIcon className="h-6 w-6" />
+      <ArrowIcon className={`${iconSizeClass} ${iconOffsetClass}`} />
       <span>{children}</span>
     </Link>
   );

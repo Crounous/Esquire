@@ -5,7 +5,7 @@ export function Header() {
   return (
     <header className="sticky z-100 top-0 bg-white">
       <div className="flex h-20 w-full items-center justify-between px-4 sm:px-6 lg:px-15">
-        <HeaderButton href="/">Esquire Asset Recovery, LLC</HeaderButton>
+        <p className="font-sans text-lg font-bold text-black">Esquire Asset Recovery, LLC</p>
 
         {/* Desktop nav */}
         <nav className="hidden items-center gap-2 lg:flex">

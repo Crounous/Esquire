@@ -5,6 +5,7 @@ type VideoSectionProps = HTMLAttributes<HTMLElement> & {
   subtitle?: string;
   src?: string;
   poster?: string;
+  youtubeUrl?: string;
 };
 
 function cx(...values: Array<string | undefined | null | false>) {
@@ -17,21 +18,39 @@ export function VideoSection({
   subtitle = "Your Fight is Our Fight",
   src,
   poster,
+  youtubeUrl,
   ...props
 }: VideoSectionProps) {
+  const youtubeId = youtubeUrl
+    ? youtubeUrl
+        .replace("https://youtu.be/", "")
+        .replace("https://www.youtube.com/watch?v=", "")
+        .split("?")[0]
+        .split("&")[0]
+    : null;
+
   return (
     <section
       {...props}
       className={cx("flex w-full flex-col items-center gap-y-10", className)}
     >
       <div className="w-full flex flex-col gap-y-1 tracking-tight items-center">
-        <h2 className="font-merriweather text-3xl sm:text-5xl lg:text-6xl font-bold text-center">{title}</h2>
-        <h2 className="font-merriweather text-3xl sm:text-5xl lg:text-6xl font-bold text-center">{subtitle}</h2>
+        <h2 className="font-merriweather text-3xl sm:text-2xl lg:text-4xl font-bold text-center">{title}</h2>
+        <h2 className="font-merriweather text-3xl sm:text-2xl lg:text-4xl font-bold text-center">{subtitle}</h2>
       </div>
 
-      <div className="w-full max-w-7xl">
+      <div className="w-full max-w-4xl">
         <div className="w-full aspect-video rounded-4xl overflow-hidden bg-black">
-        {src ? (
+        {youtubeId ? (
+          <iframe
+            className="h-full w-full"
+            src={`https://www.youtube.com/embed/${youtubeId}?autoplay=1&mute=1&modestbranding=1&rel=0&playsinline=1`}
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          />
+        ) : src ? (
           <video
             className="h-full w-full object-cover"
             src={src}
